@@ -1,19 +1,20 @@
 <template>
-  <header>
-    <icon-logo />
-    <FilmIcon class="h-5 w-5 fill-blue-300 stroke-blue-600" />
-    <nav>
-      <RouterLink to="/" class="text-blue-600 underline">Accueil</RouterLink>
-    </nav>
+  <header class="flex justify-between items-center p-5">
+    <logos></logos>
+    <menuicon></menuicon>
+    
+
   </header>
 
   <RouterView />
 </template>
 
 <script>
-import IconLogo from "./components/icons/IconLogo.vue";
-import { FilmIcon } from "@heroicons/vue/outline";
+import logos from "./components/icons/logo-s.vue"
+import logom from "./components/icons/logo-m.vue"
+import logoxl from "./components/icons/logo-xl.vue"
+import menuicon from "./components/icons/menu.vue"
 export default {
-  components: { IconLogo, FilmIcon },
+  components: { logos, logom, logoxl, menuicon, },
 };
 </script>
