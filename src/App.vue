@@ -1,23 +1,30 @@
 <template>
   <header class="flex justify-between items-center p-5">
-    <logos></logos>
+    <RouterLink to="/">
+      <logos></logos>
+    </RouterLink>
+    
     <menuicon></menuicon>
     
 
   </header>
   <RouterView />
   <footer>
-    <div class="flex flex-col text-white font-text bg-black w-screen h-80 items-center justify-center pl-16 pr-16">
+    <div class="flex flex-col text-white font-text bg-black w-full h-80 items-center justify-center pl-16 pr-16">
       <div class="flex justify-between w-full items-center">
         <logos></logos>
         <div class="flex flex-col">
-          <p class="mb-5">
+          <RouterLink to="/Contact">
+            <p class="mb-5">
             Contact
           </p>
+          </RouterLink>
 
-          <p>
+          <RouterLink to="/MentionsLegales">
+            <p>
             Mentions Légales
           </p>
+          </RouterLink>
         </div>
       </div>
       <div class="flex flex-col items-center mt-10">

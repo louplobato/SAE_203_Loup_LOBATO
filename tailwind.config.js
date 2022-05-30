@@ -18,6 +18,9 @@ module.exports = {
         "text": "Outfit",
         "heading": "Germania One",
       },
+
+      "padding": {
+      }
     },
 
   },
