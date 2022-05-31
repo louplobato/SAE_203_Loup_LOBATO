@@ -19,8 +19,8 @@ module.exports = {
         "heading": "Germania One",
       },
 
-      "width": {
-        "800": "800px"
+      "maxWidth": {
+        "288": "288px"
       }
     },
 

@@ -1,7 +1,7 @@
 <template>
-    <div class="w-800 flex flex-col h-80">
-        <img src="../../public/img/Hypno5e.jpg" alt="photo du groupe Hypno5e" class="max-h-44 object-cover rounded-t-md">
-        <div class="bg-tonique-black text-white min-h-fit flex flex-col p-2 ">
+    <div class="max-w-3xl flex flex-col h-80 max">
+        <img src="../../public/img/Hypno5e.jpg" alt="photo du groupe Hypno5e" class="max-h-44 object-cover rounded-t-md flex-1">
+        <div class="bg-tonique-black text-white min-h-fit flex flex-col p-2 flex-1">
             <div  class="flex items-center justify-between rounded-b-md">
                 <p class="font-heading text-4xl mb-2 underline">
                 Hypno5e

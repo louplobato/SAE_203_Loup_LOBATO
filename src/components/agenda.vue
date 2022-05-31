@@ -12,7 +12,7 @@
 
             
         </div>
-        <svg width="5" height="475" viewBox="0 0 5 475" fill="none" mlns="http://www.w3.org/2000/svg " class="hidden lg:block">
+        <svg width="5" height="475" viewBox="0 0 5 475" fill="none" mlns="http://www.w3.org/2000/svg " class="hidden xl:block">
             <line x1="2.5" y1="2.5" x2="2.5" y2="472.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
             </svg>
         <div class="flex flex-initial">
@@ -27,7 +27,7 @@
 
             
         </div>
-        <svg width="5" height="475" viewBox="0 0 5 475" fill="none" xmlns="http://www.w3.org/2000/svg"  class="hidden lg:block">
+        <svg width="5" height="475" viewBox="0 0 5 475" fill="none" xmlns="http://www.w3.org/2000/svg"  class="hidden xl:block">
             <line x1="2.5" y1="2.5" x2="2.5" y2="472.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
             </svg>
         <div class="flex ">
