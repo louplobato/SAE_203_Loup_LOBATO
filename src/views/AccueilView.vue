@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="w-full bg-[url('public/img/background-image-sae.jpg')] h-785  bg-center bg-cover p-20">
+    <div class="w-full bg-[url('public/img/background-image-sae.jpg')] h-785  bg-center bg-cover pl-20">
       <h1 class="font-bar text-8xl text-tonique-black">
         New Landes <br>Metal Fest
       </h1>
