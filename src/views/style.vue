@@ -30,8 +30,9 @@
 
     <agenda></agenda>
 
-    <concert></concert>
+    <concert class="mb-5"></concert>
     
+    <contactform></contactform>
     
 </template>
 
@@ -41,6 +42,7 @@ import cardArtiste from "../components/cardArtiste.vue"
 import horairesconcert from "../components/horairesconcert.vue"
 import agenda from "../components/agenda.vue"
 import concert from "../components/cardConcert.vue"
+import contactform from "../components/Contactform.vue"
 
 export default {
     components : {
@@ -49,6 +51,7 @@ export default {
         horairesconcert,
         agenda,
         concert,
+        contactform
 
     }
 }

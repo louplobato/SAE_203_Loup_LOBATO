@@ -1,11 +1,7 @@
 <template>
-  <header class="flex justify-between items-center p-5 w-full">
+  <header class="flex justify-between items-center p-5 w-full fixed">
     <RouterLink to="/">
       <logos></logos>
-    </RouterLink>
-    
-    <RouterLink to="/style">
-      <bouton PageBtn="pzihg"></bouton>
     </RouterLink>
     <menuicon></menuicon>
     
