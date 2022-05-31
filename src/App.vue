@@ -1,5 +1,5 @@
 <template>
-  <header class="flex justify-between items-center p-5">
+  <header class="flex justify-between items-center p-5 w-full">
     <RouterLink to="/">
       <logos></logos>
     </RouterLink>

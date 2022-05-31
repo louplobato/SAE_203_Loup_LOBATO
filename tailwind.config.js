@@ -19,7 +19,8 @@ module.exports = {
         "heading": "Germania One",
       },
 
-      "padding": {
+      "width": {
+        "800": "800px"
       }
     },
 

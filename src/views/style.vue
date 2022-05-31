@@ -18,6 +18,19 @@
         <Bouton PageBtn="Envoyer" class="mb-5"></Bouton>
 
     <cardArtiste></cardArtiste>
+
+    <horairesconcert ArtisteName="Hypno5e" Heure="21h" class="mb-3"></horairesconcert>
+    <horairesconcert ArtisteName="Deathspell Omega" Heure="19h" class="mb-3"></horairesconcert>
+    <horairesconcert ArtisteName="Ulcerate" Heure="21h" class="mb-3"></horairesconcert>
+    <horairesconcert ArtisteName="Meshuggah" Heure="21h" class="mb-3"></horairesconcert>
+    <horairesconcert ArtisteName="The Great Old Ones" Heure="19h" class="mb-3"></horairesconcert>
+    <horairesconcert ArtisteName="Regarde les hommes tomber" Heure="19h" class="mb-3"></horairesconcert>
+
+    
+
+    <agenda></agenda>
+
+    <concert></concert>
     
     
 </template>
@@ -25,11 +38,18 @@
 <script>
 import Bouton from "../components/button.vue";
 import cardArtiste from "../components/cardArtiste.vue"
+import horairesconcert from "../components/horairesconcert.vue"
+import agenda from "../components/agenda.vue"
+import concert from "../components/cardConcert.vue"
 
 export default {
     components : {
         Bouton,
         cardArtiste,
+        horairesconcert,
+        agenda,
+        concert,
+
     }
 }
 </script>
