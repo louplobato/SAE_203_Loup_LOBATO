@@ -25,6 +25,10 @@ module.exports = {
 
       "height": {
         "785": "1100px"
+      },
+
+      "spacing": {
+        "accueil": "10%"
       }
     },
 

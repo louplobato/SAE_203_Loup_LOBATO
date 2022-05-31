@@ -3,8 +3,45 @@
     <RouterLink to="/">
       <logos></logos>
     </RouterLink>
-    <menuicon></menuicon>
+    <button
+          class="relative z-50 text-xl"
+          aria-haspopup="true"
+          aria-controls="menu"
+          :aria-expanded="menuOuvert"
+          @click="menuOuvert = !menuOuvert"
+        >
+          <menuicon></menuicon>
+    </button>
     
+    <div
+          id="menu"
+          class="
+            translate-x-full
+            motion-safe:duration-1000 motion-safe:transition-transform
+            fixed
+            inset-0
+            bg-fond-light
+            pt-32
+            pb-32
+          "
+          :class="{ 'translate-x-0': menuOuvert }"
+        >
+          <div class="flex flex-col justify-between h-full items-center">
+            <RouterLink to="/programmation">
+              <bouton PageBtn="La Prog"></bouton>
+            </RouterLink>
+            
+              <bouton PageBtn="Réserver"></bouton>
+
+            <RouterLink to="/Artistes">
+              <bouton PageBtn="Artistes"></bouton>
+            </RouterLink>
+
+            <RouterLink to="/Festival">
+              <bouton PageBtn="Le Festival"></bouton>
+            </RouterLink>
+          </div>
+        </div>
 
   </header>
   <RouterView />
@@ -54,5 +91,15 @@ import twitter from "./components/icons/twitter.vue"
 import bouton from "./components/button.vue"
 export default {
   components: { logos, logom, logoxl, menuicon, facebook, instagram, youtube, twitter, bouton },
+  data() {
+    return {
+      menuOuvert: false,
+    };
+  },
+  beforeMount() {
+    this.$router.afterEach(() => (this.menuOuvert = false));
+  },
 };
+
+
 </script>
