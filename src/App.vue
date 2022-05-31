@@ -4,6 +4,9 @@
       <logos></logos>
     </RouterLink>
     
+    <RouterLink to="/style">
+      <bouton PageBtn="pzihg"></bouton>
+    </RouterLink>
     <menuicon></menuicon>
     
 
@@ -52,7 +55,8 @@ import facebook from "./components/icons/facebook.vue"
 import instagram from "./components/icons/instagram.vue"
 import youtube from "./components/icons/youtube.vue"
 import twitter from "./components/icons/twitter.vue"
+import bouton from "./components/button.vue"
 export default {
-  components: { logos, logom, logoxl, menuicon, facebook, instagram, youtube, twitter },
+  components: { logos, logom, logoxl, menuicon, facebook, instagram, youtube, twitter, bouton },
 };
 </script>
