@@ -40,5 +40,19 @@
     </p>
     </div>
 
+    <div class="justify-center flex mx-5 mb-24">
+      <bouton PageBtn="Réserver">
+    </bouton>
+    </div>
 
 </template>
+
+<script>
+import bouton from "../components/button.vue"
+
+export default {
+    components : {
+        bouton
+    }
+}
+</script>

@@ -21,8 +21,8 @@
                 Vendredi 15 Juillet
             </p>
 
-            <horairesconcert ArtisteName="Deathspell Omega" Heure="19h" class="mb-6"></horairesconcert>
-            <horairesconcert ArtisteName="Ulcerate" Heure="21h" class="mb-6"></horairesconcert>
+            <horairesconcert ArtisteName="The Great Old Ones" Heure="19h" class="mb-6"></horairesconcert>
+            <horairesconcert ArtisteName="Meshuggah" Heure="21h" class="mb-6"></horairesconcert>
             </div>
 
             

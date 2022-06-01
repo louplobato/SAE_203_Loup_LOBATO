@@ -9,7 +9,7 @@
         <div class="flex items-center justify-between rounded-b-md">
             <div class="bg-white font-text text-sm text-tonique-black w-fit p-2 h-fit rounded-md">
                 <p>
-                    12 Juillet
+                    17 Juillet
                 </p>
             </div>
             <fleche></fleche>
