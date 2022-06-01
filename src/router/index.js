@@ -6,6 +6,7 @@ import Festival from '../views/Festival.vue'
 import MentionsLegales from '../views/MentionsLegales.vue'
 import Contact from '../views/Contact.vue'
 import Artistes from '../views/Artistes.vue'
+import page404 from '../views/404.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

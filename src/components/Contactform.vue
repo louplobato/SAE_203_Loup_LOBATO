@@ -19,7 +19,7 @@
             >
             <label for="message"></label>
             
-            <textarea class="bg-fond-light text-white font-text text-base mb-5 p-1 w-5/12 h-28"
+            <textarea class="bg-fond-light text-white font-text text-base mb-5 p-1 w-5/12 h-64"
             type="message"
             id="message"
             name="message"

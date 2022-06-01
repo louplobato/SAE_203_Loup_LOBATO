@@ -1,6 +1,6 @@
 <template>
     <div class="flex-col flex justify-between w-3/4 ml-auto mr-auto lg:flex-row">
-        <div class="flex flex-initial">
+        <div class="flex flex-initial mb-6">
             <div>
                 <p class="text-white font-heading text-4xl text-center mb-6">
                 Vendredi 15 Juillet
@@ -15,7 +15,7 @@
         <svg width="5" height="475" viewBox="0 0 5 475" fill="none" mlns="http://www.w3.org/2000/svg " class="hidden xl:block">
             <line x1="2.5" y1="2.5" x2="2.5" y2="472.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
             </svg>
-        <div class="flex flex-initial">
+        <div class="flex flex-initial mb-6">
             <div>
                 <p class="text-white font-heading text-4xl text-center mb-6">
                 Vendredi 15 Juillet
@@ -31,7 +31,7 @@
             <line x1="2.5" y1="2.5" x2="2.5" y2="472.5" stroke="white" stroke-width="5" stroke-linecap="round"/>
             </svg>
         <div class="flex ">
-            <div class="flex flex-col flex-initial">
+            <div class="flex flex-col flex-initial mb-6">
             <p class="text-white font-heading text-4xl text-center mb-6">
                 Dimanche 17 Juillet
             </p>
