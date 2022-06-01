@@ -30,7 +30,7 @@
     </div>
      </div>
 
-     <div class="w-full bg-[url('public/img/background-bande-sae.jpg')] h-500 bg-cover pl-accueil flex flex-col justify-center bg-center">
+     <div class="w-full bg-[url('public/img/background-bande-sae.jpg')] h-500 bg-cover pl-accueil flex flex-col justify-center bg-center mb-16">
        <p class="text-7xl font-heading text-white">
          Découvrez le
        </p>
@@ -41,11 +41,27 @@
      </div>
     
 
-    <div class="flex flex-col md:flex-row w-full justify-around justify-items-stretch">
+    <div class="flex flex-col md:flex-row w-full justify-around justify-items-stretch mb-16">
       <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
       <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
       <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
     </div>
+
+    <p class="text-white font-heading text-5xl text-center px-3 mb-16">
+      Le <span class="text-tonique-black text-6xl">15</span> , <span class="text-tonique-black text-6xl">16</span> et <span class="text-tonique-black text-6xl">17</span> 
+      Juillet à <br> <span class="text-tonique-black text-6xl">Capbreton</span>
+    </p>
+
+    <p class="text-white font-heading text-5xl text-center px-3 mb-16">
+      Venez prendre part à l’expérience 
+      <br/><span class="text-tonique-black text-6xl">New Landes Metal Fest</span>
+    </p>
+
+    <div class="justify-center flex mx-5 mb-24">
+      <bouton PageBtn="Réserver">
+    </bouton>
+    </div>
+    
   </main>
 </template>
 
