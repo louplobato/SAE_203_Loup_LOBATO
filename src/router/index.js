@@ -19,6 +19,11 @@ const router = createRouter({
     { path: '/MentionsLegales', name: 'MentionsLegales', component: MentionsLegales },
     { path: '/Contact', name: 'Contact', component: Contact },
     { path: '/Artistes', name: 'Artistes', component: Artistes },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'page404',
+      component: page404
+    },
 
 
   ]
