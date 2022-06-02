@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-md flex flex-col h-80">
+    <div class="w-full flex flex-col h-80">
         <img src="../../public/img/Hypno5e.jpg" alt="photo du groupe Hypno5e" class="max-h-44 object-cover rounded-t-md">
         <div class="bg-tonique-black text-white min-h-fit flex flex-col p-2 ">
             <p class="font-heading text-4xl mb-5">

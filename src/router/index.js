@@ -7,6 +7,7 @@ import MentionsLegales from '../views/MentionsLegales.vue'
 import Contact from '../views/Contact.vue'
 import Artistes from '../views/Artistes.vue'
 import page404 from '../views/404.vue'
+import createArtiste from '../views/createArtiste.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,11 +20,8 @@ const router = createRouter({
     { path: '/MentionsLegales', name: 'MentionsLegales', component: MentionsLegales },
     { path: '/Contact', name: 'Contact', component: Contact },
     { path: '/Artistes', name: 'Artistes', component: Artistes },
-    {
-      path: '/:pathMatch(.*)*',
-      name: 'page404',
-      component: page404
-    },
+    { path: '/:pathMatch(.*)*', name: 'page404', component: page404 },
+    { path: '/createArtiste', name: 'createArtiste', component: createArtiste }
 
 
   ]

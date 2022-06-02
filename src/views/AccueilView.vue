@@ -42,9 +42,9 @@
     
 
     <div class="flex flex-col md:flex-row w-full justify-around justify-items-stretch mb-16">
-      <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
-      <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
-      <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
+      <cardArtiste class="flex-1 mx-auto md:mx-7 mb-5"></cardArtiste>
+      <cardArtiste class="flex-1 mx-auto md:mx-7 mb-5"></cardArtiste>
+      <cardArtiste class="flex-1 mx-auto md:mx-7 mb-5"></cardArtiste>
     </div>
 
     <p class="text-white font-heading text-5xl text-center px-3 mb-16">
