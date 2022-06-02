@@ -9,18 +9,18 @@
        </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 w-full justify-items-center">
 
-            <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
-            <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
-
-
-            <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
-            <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
+            <cardArtiste class="mb-5"></cardArtiste>
+            <cardArtiste class="mb-5"></cardArtiste>
 
 
-            <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
-            <cardArtiste class="flex-1 mx-auto md:mx-5 mb-5"></cardArtiste>
+            <cardArtiste class="mb-5"></cardArtiste>
+            <cardArtiste class="mb-5"></cardArtiste>
+
+
+            <cardArtiste class="mb-5"></cardArtiste>
+            <cardArtiste class="mb-5"></cardArtiste>
     </div>
 
     <div class="justify-center flex mx-5 mb-24">
