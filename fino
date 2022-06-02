@@ -1,0 +1,1 @@
+v-for="concert in listConcerts" :key="datesql" v-model="datesql"
