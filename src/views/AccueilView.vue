@@ -30,7 +30,7 @@
     </div>
      </div>
 
-     <div class="w-full bg-[url('public/img/background-bande-sae.jpg')] h-500 bg-cover pl-accueil flex flex-col justify-center bg-center mb-16">
+     <div class="w-full bg-[url('/public/img/background-bande-sae.jpg')] h-500 bg-cover pl-accueil flex flex-col justify-center bg-center mb-16">
        <p class="text-7xl font-heading text-white">
          Découvrez le
        </p>
