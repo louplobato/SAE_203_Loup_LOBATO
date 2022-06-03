@@ -47,7 +47,7 @@
                 </div>
                 <input type="text" v-model='nom' class="form-control" required />
                 <button class="btn btn-light" type="button"  @click='createArtistes()' title="Création">
-                <i class="fa fa-save fa-lg"></i>
+                    <save class="stroke-white"></save>
                 </button>
             </div>
             </form>
@@ -57,6 +57,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Date</th>
+                <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,8 +68,11 @@
                     <input type='text' v-model='Artistes.nom' />
                 </td>
                 <td>
+                    <input type="text" v-model="Artistes.date" />
+                </td>
+                <td>
                     <button class='btn light' @click.prevent="updateArtistes(Artistes)">
-                    <i class="w-4 h-4"></i>
+                        <save class="stroke-white"></save>
                     </button>
                     <button class='btn light' @click.prevent="deleteArtistes(Artistes)">
                     <i class="fa fa-trash fa-lg"></i>
@@ -84,6 +88,7 @@
 <script>
 import cardArtiste from "../components/cardArtiste.vue"
 import bouton from "../components/button.vue"
+import save from "../components/icons/save.vue"
 import { 
     getFirestore,   // Obtenir le Firestore
     collection,     // Utiliser une collection de documents
@@ -99,7 +104,8 @@ import {
 export default {
     components : {
         cardArtiste,
-        bouton
+        bouton,
+        save
     },
 
     data(){
