@@ -45,7 +45,7 @@
                 <div class="input-group-prepend">
                 <span class="input-group-text">Nom</span>
                 </div>
-                <input type="text" v-model='nom' class="form-control" required />
+                <input type="text" v-model='Artistes.nom' class="form-control" required />
                 <button class="btn btn-light" type="button"  @click='createArtistes()' title="Création">
                     <save class="stroke-white"></save>
                 </button>
@@ -111,7 +111,12 @@ export default {
     data(){
         return {
             listeArtistes:[],
-            nom:null,
+            Artistes:{
+                nom:null,
+                date:null,
+                img:null,
+                
+            },
             listeArtistesSynchro:[]
         }
     },
@@ -152,8 +157,21 @@ export default {
             })
         },
 
-        createArtistes(){ },
-        updateArtistes(Artistes){ },
+        async createArtistes(){ 
+            const firestore = getFirestore();
+            const dbArtistes = collection(firestore, "Artistes");
+            const docRef = await addDoc(dbArtistes,
+               this.Artistes
+            )
+            console.log('document créé avec le id : ', docRef.id);
+        },
+        async updateArtistes(Artistes){
+            const firestore = getFirestore();
+            const docRef = doc(firestore, "Artistes", Artistes.id);
+            await updateDoc(docRef, 
+                this.Artistes
+            )
+         },
         deleteArtistes(Artistes){ },
     }
 }
