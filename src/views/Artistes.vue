@@ -36,20 +36,44 @@
       
     </div>
 
-     <h5>Liste des pays - Simple liste</h5>
+    <div>
+            
+            </div>
+            <form class='mb-3'>
+            <h6>Nouvel Artistes</h6>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                <span class="input-group-text">Nom</span>
+                </div>
+                <input type="text" v-model='nom' class="form-control" required />
+                <button class="btn btn-light" type="button"  @click='createArtistes()' title="Création">
+                <i class="fa fa-save fa-lg"></i>
+                </button>
+            </div>
+            </form>
             <table class="table">
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nom</th>
-                <th scope="col">Actions</th>
+                <th scope="col">Date</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for='Artistes in listeArtistes' :key='Artistes.id'>
-                <td>{{pays.id}}</td>
-                <td>{{pays.nom}}</td>
-                <td>-</td>
+                <tr v-for='Artistes in listeArtistesSynchro' :key='Artistes.id'>
+                <td>{{Artistes.id}}</td>
+                
+                <td>
+                    <input type='text' v-model='Artistes.nom' />
+                </td>
+                <td>
+                    <button class='btn light' @click.prevent="updateArtistes(Artistes)">
+                    <i class="w-4 h-4"></i>
+                    </button>
+                    <button class='btn light' @click.prevent="deleteArtistes(Artistes)">
+                    <i class="fa fa-trash fa-lg"></i>
+                    </button>
+                </td>
                 </tr>
             </tbody>
             </table>
@@ -80,12 +104,51 @@ export default {
 
     data(){
         return {
-            listeArtistes:[]
+            listeArtistes:[],
+            nom:null,
+            listeArtistesSynchro:[]
         }
     },
 
     mounted(){
         this.getArtistes();
+        this.getArtistesSynchro();
     },
+
+    methods:{
+        onCnx(){
+
+        },
+
+        onDcnx(){
+
+        },
+        async getArtistes(){
+            const firestore = getFirestore();
+            const dbArtistes= collection(firestore, "Artistes");
+            const query = await getDocs(dbArtistes);
+            query.forEach((doc) => {
+                let Artistes = {
+                    id : doc.id,
+                    nom: doc.data().nom,
+                    date: doc.data().date
+                }
+                this.listeArtistes.push(Artistes);
+                
+            });
+        },
+
+        async getArtistesSynchro(){
+            const firestore = getFirestore();
+            const dbArtistes= collection(firestore, "Artistes");
+            const query = await onSnapshot(dbArtistes, (snapshot) =>{
+                this.listeArtistesSynchro = snapshot.docs.map(doc => ({id:doc.id, ...doc.data()}));
+            })
+        },
+
+        createArtistes(){ },
+        updateArtistes(Artistes){ },
+        deleteArtistes(Artistes){ },
+    }
 }
 </script>
