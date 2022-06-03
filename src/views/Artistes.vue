@@ -45,7 +45,8 @@
                 <div class="input-group-prepend">
                 <span class="input-group-text">Nom</span>
                 </div>
-                <input type="text" v-model='Artistes.nom' class="form-control" required />
+                <input type="text" v-model='Artistes.nom' class="form-control mx-3" required />
+                <input type="text" v-model='Artistes.date' class="form-control" required/>
                 <button class="btn btn-light" type="button"  @click='createArtistes()' title="Création">
                     <save class="stroke-white"></save>
                 </button>
