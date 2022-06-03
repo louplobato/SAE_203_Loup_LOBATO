@@ -11,16 +11,34 @@
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 w-full justify-items-center px-7">
 
-            <cardArtiste class="mb-5"></cardArtiste>
-            <cardArtiste class="mb-5"></cardArtiste>
+            
+            
+                <tr v-for='Artistes in listeArtistes' :key='Artistes.id'  class="w-full flex flex-col h-80 mb-24">
 
-
-            <cardArtiste class="mb-5"></cardArtiste>
-            <cardArtiste class="mb-5"></cardArtiste>
-
-
-            <cardArtiste class="mb-5"></cardArtiste>
-            <cardArtiste class="mb-5"></cardArtiste>
+                <td class="max-h-44 object-cover rounded-t-md w-fit">
+                    <img :src="Artistes.img" alt="h" />
+                    
+                </td>
+                <div class="bg-tonique-black text-white min-h-fit flex flex-col p-2 ">
+                    <td class="font-heading text-4xl mb-5">
+                    {{Artistes.nom}}
+                </td>
+                <div class="flex items-center justify-between rounded-b-md">
+                    <div class="bg-white font-text text-sm text-tonique-black w-fit p-2 h-fit rounded-md">
+                        <td>
+                    {{Artistes.date}}
+                    </td>
+                    </div>
+                    
+                <fleche></fleche>
+                </div>
+                
+                </div>
+                
+                </tr>
+        
+                
+            
     </div>
 
     <div class="justify-center flex mx-5 mb-24">
@@ -35,53 +53,7 @@
         </RouterLink>
       
     </div>
-
-    <div>
             
-            </div>
-            <form class='mb-3'>
-            <h6>Nouvel Artistes</h6>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                <span class="input-group-text">Nom</span>
-                </div>
-                <input type="text" v-model='Artistes.nom' class="form-control mx-3" required />
-                <input type="text" v-model='Artistes.date' class="form-control" required/>
-                <button class="btn btn-light" type="button"  @click='createArtistes()' title="Création">
-                    <save class="stroke-white"></save>
-                </button>
-            </div>
-            </form>
-            <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Date</th>
-                <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for='Artistes in listeArtistesSynchro' :key='Artistes.id'>
-                <td>{{Artistes.id}}</td>
-                
-                <td>
-                    <input type='text' v-model='Artistes.nom' />
-                </td>
-                <td>
-                    <input type="text" v-model="Artistes.date" />
-                </td>
-                <td>
-                    <button class='btn light' @click.prevent="updateArtistes(Artistes)">
-                        <save class="stroke-white"></save>
-                    </button>
-                    <button class='btn light' @click.prevent="deleteArtistes(Artistes)">
-                    <i class="fa fa-trash fa-lg"></i>
-                    </button>
-                </td>
-                </tr>
-            </tbody>
-            </table>
             <hr/>
 
 </template>
@@ -90,6 +62,7 @@
 import cardArtiste from "../components/cardArtiste.vue"
 import bouton from "../components/button.vue"
 import save from "../components/icons/save.vue"
+import fleche from "../components/icons/fleche.vue"
 import { 
     getFirestore,   // Obtenir le Firestore
     collection,     // Utiliser une collection de documents
@@ -102,11 +75,19 @@ import {
     query,          // Permet d'effectuer des requêtes sur Firestore
     orderBy         // Permet de demander le tri d'une requête query
     } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js'
+
+    import { 
+        getStorage,             // Obtenir le Cloud Storage
+        ref,                    // Pour créer une référence à un fichier à uploader
+        getDownloadURL,         // Permet de récupérer l'adress complète d'un fichier du Storage
+        uploadString,           // Permet d'uploader sur le Cloud Storage une image en Base64
+    } from 'https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js'
 export default {
     components : {
         cardArtiste,
         bouton,
-        save
+        save,
+        fleche
     },
 
     data(){
@@ -124,56 +105,40 @@ export default {
 
     mounted(){
         this.getArtistes();
-        this.getArtistesSynchro();
     },
 
     methods:{
-        onCnx(){
-
-        },
-
-        onDcnx(){
-
-        },
         async getArtistes(){
+            // Obtenir Firestore
             const firestore = getFirestore();
-            const dbArtistes= collection(firestore, "Artistes");
-            const query = await getDocs(dbArtistes);
-            query.forEach((doc) => {
-                let Artistes = {
-                    id : doc.id,
-                    nom: doc.data().nom,
-                    date: doc.data().date
-                }
-                this.listeArtistes.push(Artistes);
-                
-            });
+            // Base de données (collection)  document participant
+            const dbPart = collection(firestore, "Artistes");
+            // Liste des participants triés sur leur nom
+            const q = query(dbPart, orderBy('nom', 'asc'));
+            await onSnapshot(q, (snapshot) => {
+                this.listeArtistes = snapshot.docs.map(doc => (
+                    {id:doc.id, ...doc.data()}
+                ))
+                // Récupération des images de chaque participant
+                // parcours de la liste
+                this.listeArtistes.forEach(function(Artistes){
+                    // Obtenir le Cloud Storage
+                    const storage = getStorage();
+                    // Récupération de l'image par son nom de fichier
+                    const spaceRef = ref(storage, 'Artistes/'+Artistes.img);
+                    // Récupération de l'url complète de l'image
+                    getDownloadURL(spaceRef)
+                    .then((url) => {
+                        // On remplace le nom du fichier
+                        // Par l'url complète de la photo
+                        Artistes.img = url;
+                    })
+                    .catch((error) =>{
+                        console.log('erreur downloadUrl', error);
+                    })
+                })
+            })      
         },
-
-        async getArtistesSynchro(){
-            const firestore = getFirestore();
-            const dbArtistes= collection(firestore, "Artistes");
-            const query = await onSnapshot(dbArtistes, (snapshot) =>{
-                this.listeArtistesSynchro = snapshot.docs.map(doc => ({id:doc.id, ...doc.data()}));
-            })
-        },
-
-        async createArtistes(){ 
-            const firestore = getFirestore();
-            const dbArtistes = collection(firestore, "Artistes");
-            const docRef = await addDoc(dbArtistes,
-               this.Artistes
-            )
-            console.log('document créé avec le id : ', docRef.id);
-        },
-        async updateArtistes(Artistes){
-            const firestore = getFirestore();
-            const docRef = doc(firestore, "Artistes", Artistes.id);
-            await updateDoc(docRef, 
-                this.Artistes
-            )
-         },
-        deleteArtistes(Artistes){ },
     }
 }
 </script>
